@@ -1,0 +1,9 @@
+<table *ngIf="grid">
+  <tbody>
+    <tr *ngFor="let x of gridSize">
+      <td *ngFor="let y of gridSize">
+        {{grid[x][y]}}
+      </td>
+    </tr>
+  </tbody>
+</table>
