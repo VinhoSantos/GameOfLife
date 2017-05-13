@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
-  grid: boolean[][];
+  grid: boolean[][] = [];
   gridSize: number = 50;
 
   constructor() { }
@@ -17,11 +17,13 @@ export class GridComponent implements OnInit {
   }
 
   createEmptyGrid = () => {
-    for (let x = 0; x < this.gridSize; x++) {
-      for (let y = 0; y < this.gridSize; y++) {
-        this.grid[x][y] = false;
+    this.grid = [];
+    for (let x = 0; x < this.gridSize; x++) { //rows
+      this.grid[x] = [];
+      for (let y = 0; y < this.gridSize; y++) { //columns
+        //this.grid[x][y] = false;
         if (x == 20 && y == 25) {
-          this.grid[x][y] = true;
+          //this.grid[x][y] = true;
         }
       }
     }

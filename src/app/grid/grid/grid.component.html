@@ -1,8 +1,8 @@
 <table *ngIf="grid">
   <tbody>
-    <tr *ngFor="let x of gridSize">
-      <td *ngFor="let y of gridSize">
-        {{grid[x][y]}}
+    <tr *ngFor="let x of grid; let i = index;">
+      <td *ngFor="let y of grid[i]; let j = index;">
+        {{grid[i][j]}}
       </td>
     </tr>
   </tbody>
