@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+table.grid {
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+
+table.grid th, table.grid td {
+    margin: 0;
+    padding: 2px;
+}
+
+.alive, .dead {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.alive {
+    background-color: green;
+}
+
+.dead {
+    background-color: red;
+    opacity: 0.2;
+}

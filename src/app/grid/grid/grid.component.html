@@ -1,8 +1,12 @@
-<table *ngIf="grid">
+<button (click)="run()">Run</button>
+<button (click)="end()">End</button>
+
+<table *ngIf="grid" class="grid">
   <tbody>
-    <tr *ngFor="let x of grid; let i = index;">
-      <td *ngFor="let y of grid[i]; let j = index;">
-        {{grid[i][j]}}
+    <tr *ngFor="let row of grid;">
+      <td *ngFor="let cell of row;">
+        <div class="alive" *ngIf="cell"></div>
+        <div class="dead" *ngIf="!cell"></div>
       </td>
     </tr>
   </tbody>
