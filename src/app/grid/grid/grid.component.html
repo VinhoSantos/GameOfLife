@@ -1,13 +1,20 @@
 <button (click)="run()">Run</button>
-<button (click)="end()">End</button>
+<button (click)="end()">End</button> Step: {{step}}
 
 <table *ngIf="grid" class="grid">
   <tbody>
-    <tr *ngFor="let row of grid;">
-      <td *ngFor="let cell of row;">
+    <tr>
+      <td></td>
+      <td *ngFor="let row of grid; let x = index" class="index-nrs">{{x}}</td>
+    </tr>
+    <tr *ngFor="let row of grid; let x = index;">
+      <ng-template ngFor let-cell [ngForOf]="row" let-y="index">
+      <td *ngIf="y === 0" class="index-nrs">{{x}}</td>
+      <td>
         <div class="alive" *ngIf="cell"></div>
-        <div class="dead" *ngIf="!cell"></div>
+        <div class="dead" *ngIf="!cell" [ngClass]="{'playingField': isInSidePlayingField(x, y)}"></div>
       </td>
+      </ng-template>
     </tr>
   </tbody>
 </table>
